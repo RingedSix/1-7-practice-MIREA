@@ -1,4 +1,5 @@
 # 1 practice-MIREA
+
 # № 1
 function gcd_(a::T, b::T) where T<:Integer
     while !iszero(b)
