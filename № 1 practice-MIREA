@@ -1,14 +1,14 @@
 # 1 practice-MIREA
- № 1
+# № 1
 function gcd_(a::T, b::T) where T<:Integer
     while !iszero(b)
         a, b = b, a % b
     end
     return abs(a)
 end
-------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-№ 2 
+# № 2 
 function gcdx_(a::T, b::T) where T<:Integer 
     u, v = one(T), zero(T) 
     u1, v1 = zero(T), one(T)
@@ -23,9 +23,9 @@ function gcdx_(a::T, b::T) where T<:Integer
     return a, u, v 
 end
 isnegative(a::Integer) = (a < 0)
-------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-  № 3 
+# № 3 
 function Base. *(a::Z{T,N}) where {T<:Integer, N}
     if gcd(a.a, N) != 1 
         return -1
@@ -49,23 +49,23 @@ end
 function Base. println(a::Z{T,N}) where {T<:Any, N}
     println(string(a.a))
 end
-------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-№ 4 
+# № 4 
 function diophant(x::T, y::T, z::T) where T<:Integer
     a, b, c = gcdx_(x,y)
     return b * z , c * z
 end
-------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-№ 5,6 
+# № 5,6 
 struct Z{T,N}
     a::T
     Z{T,N}(a::T) where {T<:Integer, N} = new(mod(a, N))
     Z{T,N}(a::T) where {T<:Polynom{Int}, N} = new(mod(a, Polynom{Int}(Vector(collect(N)))))
 end
-------------------------------------------------------------------------
-№ 7
+# ------------------------------------------------------------------------
+# № 7
 struct Polynom{T}
     a::AbstractVector{T}
     Polynom{T}(a::AbstractVector{T}) where {T<:Integer} = new(a)
