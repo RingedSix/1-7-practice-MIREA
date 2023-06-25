@@ -1,4 +1,5 @@
 # № 2 practice-MIREA
+
 # № 1
 function fast_pow(a::T, n::Int) where T<:Any
     k=n
